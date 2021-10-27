@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 443640361232.dkr.ecr.ap-northeast-2.amazonaws.com/demo-nestjs-backend
   newName: 443640361232.dkr.ecr.ap-northeast-2.amazonaws.com/demo-nestjs-backend
-  newTag: abcdefg
+  newTag: 388e77cb
 resources:
 - ../../base
 patchesStrategicMerge:
