@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-nestjs-backend
+  namespace: default
+  labels:
+    env: dev
+spec:
+  selector:
+    matchLabels:
+      app: nestjs-backend-fargate
+  template:
+    metadata:
+      labels:
+        app: nestjs-backend-fargate

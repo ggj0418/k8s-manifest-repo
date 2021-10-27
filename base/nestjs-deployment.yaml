@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-nestjs-backend
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nestjs-backend-fargate
+  template:
+    metadata:
+      labels:
+        app: nestjs-backend-fargate
+    spec:
+      containers:
+        - name: demo-nestjs-backend
+          image: 443640361232.dkr.ecr.ap-northeast-2.amazonaws.com/demo-nestjs-backend
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 250m
+            limits:
+              cpu: 500m

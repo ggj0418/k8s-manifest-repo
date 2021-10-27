@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-nestjs-backend
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: "/movies"
+spec:
+  selector:
+     app: nestjs-backend-fargate
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
